@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 import model.entities.CarRental;
 import model.entities.Vehicle;
-import model.services.BrazilTaxServices;
+import model.services.BrazilTaxService;
 import model.services.RentalService;
 
 public class Program {
@@ -25,7 +25,7 @@ public class Program {
 
 		double hourPrice = Double.parseDouble(JOptionPane.showInputDialog("Price per hour:"));
 		double dayPrice = Double.parseDouble(JOptionPane.showInputDialog("Price per day:"));
-		RentalService rentalService = new RentalService(hourPrice, dayPrice, new BrazilTaxServices());
+		RentalService rentalService = new RentalService(hourPrice, dayPrice, new BrazilTaxService());
 		rentalService.processInvoice(cr);
 
 		StringBuilder sb = new StringBuilder("Invoice:\n");
